@@ -1,0 +1,45 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Butter Chicken",
+            "description": "Tender chicken cooked in a rich tomato and butter sauce.",
+            "price": "18.99",
+            "category": "Curries",
+            "is_available": 1,
+            "dietary_info": "GF",
+            "options": "[{\"name\":\"Spice Level\",\"type\":\"radio\",\"required\":true,\"choices\":[\"Mild\",\"Medium\",\"Hot\"]}]"
+        },
+        {
+            "id": 2,
+            "name": "Garlic Naan",
+            "description": "Leavened bread topped with fresh garlic and cilantro.",
+            "price": "4.50",
+            "category": "Breads",
+            "is_available": 1,
+            "dietary_info": "V",
+            "options": "[]"
+        },
+        {
+            "id": 3,
+            "name": "Vegetable Samosa",
+            "description": "Crispy pastry filled with spiced potatoes and peas.",
+            "price": "6.99",
+            "category": "Appetizers",
+            "is_available": 1,
+            "dietary_info": "V, VG",
+            "options": "[]"
+        },
+        {
+            "id": 4,
+            "name": "Mango Lassi",
+            "description": "Refreshing yogurt drink with mango pulp.",
+            "price": "5.50",
+            "category": "Beverages",
+            "is_available": 1,
+            "dietary_info": "GF",
+            "options": "[]"
+        }
+    ]
+}

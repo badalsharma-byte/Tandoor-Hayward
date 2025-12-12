@@ -1,0 +1,404 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if order type is set, redirect to menu landing if not
+    const orderType = localStorage.getItem('tandoor_order_type');
+    if (!orderType) {
+        // Redirect to menu landing page to select order type
+        window.location.href = 'menu.php';
+        return;
+    }
+
+    // Update order type display
+    const orderTypeText = document.getElementById('order-type-text');
+    if (orderTypeText) {
+        orderTypeText.textContent = orderType === 'pickup' ? 'Pickup' : 'Delivery';
+    }
+
+    fetchMenu();
+    setupCart();
+    setupModal();
+});
+
+let menuData = [];
+let cart = JSON.parse(localStorage.getItem('tandoor_cart')) || [];
+let currentItem = null;
+let currentQty = 1;
+
+// --- Fetch & Render Menu ---
+
+function fetchMenu() {
+    fetch('crm/api/menu.php')
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                menuData = data.data;
+                renderMenu(menuData);
+            } else {
+                console.error('Failed to load menu');
+            }
+        })
+        .catch(err => console.error('Error:', err));
+}
+
+function renderMenu(items) {
+    const categoryList = document.getElementById('category-list');
+    const menuContent = document.getElementById('menu-content');
+
+    // Group items by category
+    // Assuming items have a 'category_name' or similar. If not, we might need to infer or use a default.
+    // Based on previous files, let's check the data structure. 
+    // For now, I'll group by 'category_name' if it exists, otherwise 'General'.
+
+    const categories = {};
+
+    items.forEach(item => {
+        if (item.is_available != 1) return;
+
+        const cat = item.category || 'Main Menu';
+        if (!categories[cat]) {
+            categories[cat] = [];
+        }
+        categories[cat].push(item);
+    });
+
+    // Clear loading
+    categoryList.innerHTML = '';
+    menuContent.innerHTML = '';
+
+    // Render
+    Object.keys(categories).forEach((catName, index) => {
+        // Sidebar Link
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="#cat-${index}">${catName}</a>`;
+        categoryList.appendChild(li);
+
+        // Section
+        const section = document.createElement('section');
+        section.id = `cat-${index}`;
+        section.className = 'menu-category-section';
+
+        section.innerHTML = `
+            <h2 class="category-title">${catName}</h2>
+            <div class="menu-grid">
+                ${categories[catName].map(item => createMenuItemCard(item)).join('')}
+            </div>
+        `;
+        menuContent.appendChild(section);
+    });
+}
+
+
+function createMenuItemCard(item) {
+    // Escape HTML to prevent XSS
+    const name = escapeHtml(item.name);
+    const desc = escapeHtml(item.description || '');
+    const price = parseFloat(item.price).toFixed(2);
+    const dietary = item.dietary_info ? `<span class="dietary-badge">${escapeHtml(item.dietary_info)}</span>` : '';
+
+    // Handle menu item image
+    const imageUrl = item.image_url || './assets/images/menu-placeholder.jpg';
+    const imageHtml = `<div class="menu-card-image">
+        <img src="${escapeHtml(imageUrl)}" alt="${name}" onerror="this.src='./assets/images/menu-placeholder.jpg'">
+    </div>`;
+
+    return `
+        <div class="menu-card" onclick="openItemModal(${item.id})">
+            ${imageHtml}
+            <div class="menu-card-info">
+                <div class="menu-card-header">
+                    <h3 class="menu-card-title">${name}</h3>
+                    ${dietary}
+                </div>
+                <p class="menu-card-desc">${desc}</p>
+                <div class="menu-card-price">$${price}</div>
+            </div>
+            <button class="add-btn">+</button>
+        </div>
+    `;
+}
+
+// --- Modal Logic ---
+
+function setupModal() {
+    const modal = document.getElementById('item-modal');
+    const closeBtn = document.getElementById('modal-close');
+    const qtyMinus = document.getElementById('qty-minus');
+    const qtyPlus = document.getElementById('qty-plus');
+    const addToOrderBtn = document.getElementById('add-to-order-btn');
+
+    closeBtn.onclick = () => closeModal();
+
+    qtyMinus.onclick = () => {
+        if (currentQty > 1) {
+            currentQty--;
+            updateModalPrice();
+        }
+    };
+
+    qtyPlus.onclick = () => {
+        currentQty++;
+        updateModalPrice();
+    };
+
+    addToOrderBtn.onclick = () => {
+        if (currentItem) {
+            if (!validateOptions()) return;
+
+            const selectedOptions = getSelectedOptions();
+            addToCart(currentItem, currentQty, selectedOptions);
+            closeModal();
+        }
+    };
+
+    window.onclick = (e) => {
+        if (e.target === modal) closeModal();
+    };
+}
+
+window.openItemModal = function (itemId) {
+    currentItem = menuData.find(i => i.id == itemId);
+    if (!currentItem) return;
+
+    currentQty = 1;
+
+    document.getElementById('modal-item-name').textContent = currentItem.name;
+    document.getElementById('modal-item-desc').textContent = currentItem.description;
+    document.getElementById('modal-item-price').textContent = `$${parseFloat(currentItem.price).toFixed(2)}`;
+
+    // Render Options
+    const optionsContainer = document.getElementById('modal-options');
+    if (!optionsContainer) {
+        // Create container if not exists (it wasn't in original HTML)
+        const body = document.querySelector('.modal-body');
+        const newContainer = document.createElement('div');
+        newContainer.id = 'modal-options';
+        newContainer.className = 'modal-options-container';
+        body.insertBefore(newContainer, document.querySelector('.modal-controls'));
+    }
+
+    renderOptions(currentItem.options);
+
+    updateModalPrice();
+
+    document.getElementById('item-modal').classList.add('active');
+};
+
+function renderOptions(optionsJson) {
+    const container = document.getElementById('modal-options');
+    container.innerHTML = '';
+
+    if (!optionsJson) return;
+
+    let options;
+    try {
+        options = typeof optionsJson === 'string' ? JSON.parse(optionsJson) : optionsJson;
+    } catch (e) {
+        console.error('Error parsing options:', e);
+        return;
+    }
+
+    if (!Array.isArray(options)) return;
+
+    options.forEach((opt, index) => {
+        const section = document.createElement('div');
+        section.className = 'option-section';
+
+        const title = document.createElement('h4');
+        title.className = 'option-title';
+        title.innerHTML = `${opt.name} ${opt.required ? '<span class="required-badge">Required</span>' : ''}`;
+        section.appendChild(title);
+
+        const choicesDiv = document.createElement('div');
+        choicesDiv.className = 'option-choices';
+
+        opt.choices.forEach(choice => {
+            const label = document.createElement('label');
+            label.className = 'option-choice';
+
+            const input = document.createElement('input');
+            input.type = opt.type || 'radio';
+            input.name = `option-${index}`;
+            input.value = choice;
+            if (opt.required) input.required = true;
+
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(choice));
+            choicesDiv.appendChild(label);
+        });
+
+        section.appendChild(choicesDiv);
+        container.appendChild(section);
+    });
+}
+
+function validateOptions() {
+    const container = document.getElementById('modal-options');
+    const sections = container.querySelectorAll('.option-section');
+    let valid = true;
+
+    sections.forEach(section => {
+        const required = section.querySelector('.required-badge');
+        if (required) {
+            const inputs = section.querySelectorAll('input');
+            const checked = Array.from(inputs).some(i => i.checked);
+            if (!checked) {
+                valid = false;
+                section.classList.add('error');
+            } else {
+                section.classList.remove('error');
+            }
+        }
+    });
+
+    if (!valid) {
+        alert('Please select all required options.');
+    }
+
+    return valid;
+}
+
+function getSelectedOptions() {
+    const container = document.getElementById('modal-options');
+    const inputs = container.querySelectorAll('input:checked');
+    const selected = [];
+
+    inputs.forEach(input => {
+        // Find the option name from the parent section title
+        const section = input.closest('.option-section');
+        const name = section.querySelector('.option-title').childNodes[0].textContent.trim();
+        selected.push({ name: name, value: input.value });
+    });
+
+    return selected;
+}
+
+function closeModal() {
+    document.getElementById('item-modal').classList.remove('active');
+    currentItem = null;
+    // Clear options
+    const container = document.getElementById('modal-options');
+    if (container) container.innerHTML = '';
+}
+
+function updateModalPrice() {
+    if (!currentItem) return;
+    // Base price
+    let price = parseFloat(currentItem.price);
+
+    // Add option prices if we had them (current data doesn't have price modifiers, but good to plan for)
+
+    const total = price * currentQty;
+    document.getElementById('qty-val').textContent = currentQty;
+    document.getElementById('modal-total-price').textContent = `$${total.toFixed(2)}`;
+}
+
+// --- Cart Logic ---
+
+function setupCart() {
+    updateCartUI();
+
+    document.getElementById('mobile-cart-btn').onclick = () => {
+        document.getElementById('cart-sidebar').classList.toggle('active');
+    };
+
+    document.getElementById('close-cart').onclick = () => {
+        document.getElementById('cart-sidebar').classList.remove('active');
+    };
+
+    document.getElementById('checkout-btn').onclick = () => {
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        window.location.href = 'checkout.php';
+    };
+}
+
+function addToCart(item, qty, options = []) {
+    // Generate a unique ID based on item ID and options to allow same item with different options
+    const cartItemId = item.id + '-' + JSON.stringify(options);
+
+    const existing = cart.find(i => i.cartItemId === cartItemId);
+
+    if (existing) {
+        existing.qty += qty;
+    } else {
+        cart.push({
+            cartItemId: cartItemId, // Unique ID for cart entry
+            id: item.id,
+            name: item.name,
+            price: parseFloat(item.price),
+            qty: qty,
+            options: options
+        });
+    }
+
+    saveCart();
+    updateCartUI();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCartUI();
+}
+
+function saveCart() {
+    localStorage.setItem('tandoor_cart', JSON.stringify(cart));
+}
+
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalEl = document.getElementById('cart-total-price');
+    const countEl = document.getElementById('cart-count');
+
+    cartItemsContainer.innerHTML = '';
+
+    let total = 0;
+    let count = 0;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="empty-cart-msg">Your cart is empty</div>';
+        document.body.classList.remove('cart-visible');
+    } else {
+        document.body.classList.add('cart-visible');
+        cart.forEach((item, index) => {
+            total += item.price * item.qty;
+            count += item.qty;
+
+            const optionsHtml = item.options && item.options.length > 0
+                ? `<div class="cart-item-options">${item.options.map(o => `${o.name}: ${o.value}`).join(', ')}</div>`
+                : '';
+
+            const itemEl = document.createElement('div');
+            itemEl.className = 'cart-item';
+            itemEl.innerHTML = `
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${escapeHtml(item.name)}</div>
+                    ${optionsHtml}
+                    <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+                    <div class="cart-item-qty">Qty: ${item.qty}</div>
+                </div>
+                <button class="cart-remove-btn" onclick="removeFromCart(${index})">&times;</button>
+            `;
+            cartItemsContainer.appendChild(itemEl);
+        });
+    }
+
+    totalEl.textContent = `$${total.toFixed(2)}`;
+    countEl.textContent = count;
+
+    window.removeFromCart = removeFromCart;
+}
+
+
+// --- Utils ---
+
+function escapeHtml(text) {
+    if (!text) return '';
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
