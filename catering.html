@@ -3809,31 +3809,26 @@
 
             if (servicesSection && servicesRight) {
                 // Calculate total scrollable width
-                // (Total width of scrollable content) - (Viewport width - Left offset of scrollable content) + Padding buffer
-                let getScrollAmount = () => {
+                // We want a 1:1 mapping: 1px of vertical scroll = 1px of horizontal translation
+                const getScrollAmount = () => {
                     let servicesWidth = servicesRight.scrollWidth;
                     let viewportWidth = window.innerWidth;
-                    // We want to scroll enough so the last card comes fully into view
-                    // The services-right starts at around 35%-40% of screen, so we need to scroll its full width minus the remaining space
-                    return -(servicesWidth - viewportWidth + 100);
+                    // Total distance to move the content left. 
+                    // Using exact scrollWidth - viewportWidth ensures we stop exactly at the edge.
+                    return -(servicesWidth - viewportWidth);
                 };
-                // Actually, a simpler way for x translation is:
-                // Move it left by (Total Width - Visible Width)
-                // Visible width for the track is effectively (100vw - 400px sidebar width) approx.
-                // But since we want it to scroll across the screen, let's just use scrollWidth - window.innerWidth + sidebarWidth
 
                 const scrollTween = gsap.to(servicesRight, {
-                    x: () => {
-                        return -(servicesRight.scrollWidth - window.innerWidth + servicesRight.getBoundingClientRect().left + 50);
-                    },
+                    x: getScrollAmount,
                     ease: "none",
                     scrollTrigger: {
                         trigger: ".all-services",
                         start: "top top",
-                        end: "+=3000", /* Scroll duration */
+                        // The end value defines the duration of the pin.
+                        end: () => `+=${Math.abs(getScrollAmount())}`,
                         pin: true,
-                        scrub: true,
-                        invalidateOnRefresh: true, /* Recalculate on resize */
+                        scrub: 1, // Momentum smoothing (1 second lag)
+                        invalidateOnRefresh: true,
                     }
                 });
             }
