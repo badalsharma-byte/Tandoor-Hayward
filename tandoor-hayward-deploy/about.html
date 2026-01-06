@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tandoor Indian Restaurant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
+    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/about.css">
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Left Navigation -->
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+
+            <!-- Center Logo -->
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
+            </a>
+
+            <!-- Right Navigation -->
+            <ul class="nav-right">
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <div class="hero-title-wrapper">
+                <span class="side-text left">NEW OWNERSHIP</span>
+                <h1 class="about-hero-title">
+                    <span class="line-1" data-animate="true">A FRESH</span>
+                    <span class="line-2" data-animate="true">START</span>
+                </h1>
+                <span class="side-text right">SAME LOCATION</span>
+            </div>
+        </div>
+
+        <p class="about-hero-subtitle">
+            Under new management, we're bringing back what Tandoor was always meant to be — authentic Indian cuisine
+            made fresh, from scratch, every single day.
+        </p>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="about-journey">
+        <div class="journey-container">
+            <h2 class="journey-title">I. A NEW BEGINNING</h2>
+
+            <div class="journey-bottom-content">
+                <div class="journey-text">
+                    <p>
+                        When we took over Tandoor Indian Restaurant, we made a promise: to restore the quality and
+                        authenticity that this location deserves. The previous ownership had let standards slip, but we
+                        saw the potential — a beloved neighborhood spot waiting to be revived.
+                    </p>
+                    <p>
+                        Today, everything is different. Our kitchen operates with one simple rule: fresh, every day. We
+                        don't use pre-packaged ingredients or frozen shortcuts. Our chicken is cut fresh daily. Our
+                        spices are ground in-house. Our bread comes straight from the tandoor to your table. This is
+                        Indian cooking the way it should be.
+                    </p>
+                </div>
+
+                <div class="journey-image-wrapper">
+                    <img src="./assets/images/about/2.webp" alt="Tandoor Restaurant Kitchen" class="journey-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tradition Section -->
+    <section class="about-tradition">
+        <div class="tradition-content">
+            <span class="tradition-number">II</span>
+            <h2 class="tradition-title">FRESH INGREDIENTS, <br> NO COMPROMISES</h2>
+            <p class="tradition-subtitle">
+                We believe great food starts with great ingredients. That's why we source fresh produce daily,
+                cut our chicken fresh every morning, grind our own spice blends, and prepare everything from scratch.
+                No frozen, no pre-made, no shortcuts — just honest, authentic Indian cooking.
+            </p>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="about-quote-section">
+        <div class="quote-content-wrapper">
+            <div class="quote-text-container">
+                <blockquote class="quote-text">
+                    "If it's not fresh,<br>
+                    it's not leaving our kitchen."
+                </blockquote>
+                <div class="quote-author">
+                    <strong>The New Tandoor Team</strong>
+                    <span>Hayward, CA</span>
+                </div>
+            </div>
+            <div class="quote-image-container">
+                <img src="./assets/images/about/3.webp" alt="Fresh Ingredients" class="quote-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section with Stacking Cards -->
+    <section class="about-philosophy">
+        <div class="philosophy-wrapper">
+            <div class="philosophy-background-title">
+                <span class="philosophy-roman">III</span>
+                <h2 class="philosophy-title">WHAT MAKES US <br> DIFFERENT</h2>
+            </div>
+
+            <div class="philosophy-cards-container">
+                <!-- Card 1 -->
+                <div class="philosophy-card card-1">
+                    <span class="card-number">01</span>
+                    <h3 class="card-title">Fresh-Cut Chicken</h3>
+                    <p class="card-text">
+                        Our chicken is never frozen. We cut it fresh every single morning — you can taste the difference
+                        in every bite.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="philosophy-card card-2">
+                    <span class="card-number">02</span>
+                    <h3 class="card-title">House-Ground Spices</h3>
+                    <p class="card-text">
+                        We grind our own spice blends in-house. No pre-packaged masalas — just authentic, aromatic
+                        flavors the traditional way.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="philosophy-card card-3">
+                    <span class="card-number">03</span>
+                    <h3 class="card-title">Made From Scratch</h3>
+                    <p class="card-text">
+                        Every curry, every sauce, every bread — prepared fresh daily. No shortcuts, no frozen
+                        ingredients, no compromises.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="philosophy-card card-4">
+                    <span class="card-number">04</span>
+                    <h3 class="card-title">New Standards</h3>
+                    <p class="card-text">
+                        Under new ownership, we've raised the bar on quality, cleanliness, and service. Experience the
+                        Tandoor difference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Section -->
+    <section class="about-people">
+        <div class="people-content-container">
+            <h2 class="people-title">NEW TEAM, <br> NEW ENERGY</h2>
+            <div class="people-text-wrapper">
+                <p class="people-text">
+                    We're a passionate team committed to bringing you the best Indian food in Hayward. From our kitchen
+                    staff who arrive early to prep fresh ingredients, to our servers who ensure every visit is memorable
+                    — we take pride in what we do.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="about-testimonial">
+        <div class="testimonial-container">
+            <div class="testimonial-header">
+                <h2 class="testimonial-title">WHAT OUR<br> GUESTS SAY</h2>
+                <div class="rating-box">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="rating-score">4.7<sup>/5</sup></div>
+                    <div class="rating-label">Excellent</div>
+                    <div class="rating-source">Based on 2,376 reviews</div>
+                </div>
+            </div>
+
+            <div class="testimonial-marquee">
+                <div class="testimonial-track">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="review-source">Google</span>
+                        </div>
+                        <p class="review-text">
+                            Always so delicious. The staff is incredible and attentive. My favorite restaurant in
+                            Hayward.
+                        </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Jamie F.</strong>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="review-source">Yelp</span>
+                        </div>
+                        <p class="review-text">
+                            The restaurant is very clean, food is amazing and servers very attentive. You will not
+                            regret eating here.
+                        </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Priya K.</strong>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="review-source">Tripadvisor</span>
+                        </div>
+                        <p class="review-text">
+                            I had some of the best Indian food around... Tandoori Chicken, Rogan Josh and samosa chaat —
+                            everything was incredible.
+                        </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Rahul S.</strong>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="review-source">Google</span>
+                        </div>
+                        <p class="review-text">
+                            GORGEOUS interior and GORGEOUS FOOD! My dining experience was stellar.
+                        </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Anita P.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p class="cta-text">
+                    Have you already visited our restaurant and left<br>
+                    with great memories?
+                </p>
+                <a href="https://g.page/r/tandoorhayward/review" target="_blank" class="cta-link">Be sure to leave us a
+                    review!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <!-- Footer Hero - Brand Statement -->
+        <div class="footer-hero">
+            <h2 class="footer-brand">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="footerLogo-img">
+            </h2>
+            <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
+
+            <div class="footer-cta-group">
+                <a href="menu.html" class="footer-cta">Order Online</a>
+                <a href="#reserve" class="footer-cta">Reserve a Table</a>
+                <a href="catering.html" class="footer-cta">Book Catering</a>
+            </div>
+        </div>
+
+        <!-- Footer Content -->
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div class="footer-section footer-contact">
+                <h3>Visit Us</h3>
+                <p class="address">27167 Mission Blvd, Hayward, CA 94544</p>
+                <div class="phone-card">
+                    <a href="tel:5105550123" class="phone">(510) 555-0123</a>
+                </div>
+                <p>Mon – Wed: 10:30 AM – 9:30 PM</p>
+                <p>Thu – Sun: 11:00 AM – 9:30 PM</p>
+                <p><a href="mailto:info@tandoorhayward.com">info@tandoorhayward.com</a></p>
+
+                <!-- Social Media Icons -->
+                <div class="footer-social-links">
+                    <a href="https://instagram.com/tandoorhayward" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/tandoorhayward" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section footer-links">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get the latest specials and events delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>&copy; 2025 Tandoor Indian Restaurant</p>
+                <span class="separator">•</span>
+                <p>Crafted with love by <a href="https://hiraya.digital" target="_blank">Hiraya Digital</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Container -->
+    <div class="mobile-menu-container">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="menu.html" class="mobile-cta-button">Order Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
+                clip-rule="evenodd" />
+        </svg>
+    </a>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandoor Indian Restaurant | Authentic Indian Cuisine in Hayward</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
+    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/testimonials.css">
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Left Navigation -->
+            <ul class="nav-left">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <!-- Center Logo -->
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
+            </a>
+
+            <!-- Right Navigation -->
+            <ul class="nav-right">
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./assets/images/hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+            <!-- Center: Heading -->
+            <div class="hero-center">
+                <div class="hero-eyebrow">SINCE 1998 • HAYWARD, CALIFORNIA</div>
+                <h1 class="hero-heading" data-animate="true">
+                    AUTHENTIC INDIAN FLAVORS, CRAFTED FRESH DAILY </h1>
+            </div>
+
+            <!-- Bottom: Description + Reviews -->
+            <div class="hero-bottom">
+                <div class="hero-left">
+                    <p class="hero-description">
+                        Experience the richness of traditional Indian cuisine made with fresh ingredients, aromatic
+                        spices, and recipes passed down through generations. </p>
+                    <div class="hero-ctas">
+                        <a href="catering.html" class="btn btn-primary"><span>Explore Services</span></a>
+                        <a href="menu.html" class="btn btn-secondary"><span>View Menu</span></a>
+                    </div>
+                </div>
+
+                <div class="hero-reviews">
+                    <div class="reviews-top">
+                        <div class="reviews-stars">★★★★★</div>
+                        <svg class="google-logo" viewBox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                    </div>
+                    <div class="reviews-bottom">
+                        <div class="reviews-rating">4.7<sup>/5</sup></div>
+                        <div class="reviews-info">
+                            <div class="reviews-status">Excellent</div>
+                            <div class="reviews-count">Based on 3,576 reviews</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - The Spirit of Indian Dining -->
+    <section class="about-section" id="about">
+        <video class="about-video" autoplay muted loop playsinline>
+            <source src="uploads/video/video_6931dca9c7f822.87807667.mp4" type="video/mp4">
+        </video>
+
+        <div class="about-overlay"></div>
+
+        <div class="about-content">
+            <h2 class="about-heading" data-animate="true">THE SPIRIT OF INDIAN DINING </h2>
+
+            <p class="about-description">
+                From the warmth of our tandoor oven to the care in every spice blend, we honor tradition while embracing
+                innovation. Fresh ingredients, bold flavors, and genuine hospitality — this is Indian dining,
+                reimagined. h </p>
+
+            <a href="menu.html" class="btn btn-secondary"><span>Our Story</span></a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="menu-wrapper">
+            <!-- Left Side - Menu Content -->
+            <div class="menu-content-left">
+                <h2 class="menu-heading" data-animate="true">
+                    OUR MOST LOVED DISHES </h2>
+                <p class="menu-subheading">
+                    The Spirit of Indian Dining — Warmth, Tradition &amp; Fresh Flavors a </p>
+
+                <ul class="menu-items" id="dynamic-menu-container">
+                    <!-- Menu items loaded statically -->
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Chicken Biryani</span>
+                            <span class="menu-item-price">$19.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Basmati rice cooked with tender chicken and aromatic spices.
+                        </p>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Jeera Rice</span>
+                            <span class="menu-item-price">$5.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Basmati rice flavored with cumin seeds.
+                        </p>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Lamb Biryani</span>
+                            <span class="menu-item-price">$21.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Basmati rice cooked with tender lamb and aromatic spices.
+                        </p>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Plain Basmati Rice</span>
+                            <span class="menu-item-price">$4.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Steamed basmati rice.
+                        </p>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Shrimp Biryani</span>
+                            <span class="menu-item-price">$21.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Basmati rice cooked with shrimp and aromatic spices.
+                        </p>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-name">Vegetable Biryani</span>
+                            <span class="menu-item-price">$17.99</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Basmati rice cooked with mixed vegetables and aromatic spices.
+                        </p>
+                    </li>
+                </ul>
+
+                <a href="menu.html" class="menu-cta-btn">
+                    Open Menu </a>
+            </div>
+
+            <!-- Right Side - Images -->
+            <div class="menu-images-right">
+                <div class="menu-image-container" data-image="1">
+                    <img src="./uploads/menu/menu_6931aa7336fc26.77445685.webp" alt="Menu Image 1" class="menu-image">
+                </div>
+                <div class="menu-image-container" data-image="2">
+                    <img src="./uploads/menu_section/menu_section_6931d74adf9800.15236000.webp" alt="Menu Image 2"
+                        class="menu-image">
+                </div>
+                <div class="menu-image-container" data-image="3">
+                    <img src="./uploads/menu_section/menu_section_6931d754295a62.68106705.webp" alt="Menu Image 3"
+                        class="menu-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Us Section -->
+    <section class="ChooseUs-wrapper" id="ChooseUs">
+        <div class="ChooseUs-container">
+            <div class="ChooseUs-header">
+                <h1 data-animate="true">WHAT MAKES<br> TANDOOR SPECIAL</h1>
+                <div class="subtitle">
+                    <span>EXCEPTIONAL FOOD</span>
+                    <span>ANYWHERE</span>
+                </div>
+                <p class="description">
+                    Whether you're planning a wedding, corporate event, birthday celebration, or family gathering, we
+                    offer delicious, customizable catering packages designed to delight your guests.
+                </p>
+            </div>
+
+            <div class="ChooseUs-features">
+                <div class="feature-card">
+                    <img src="./assets/images/choose1.webp" alt="Buffet Display" class="feature-image">
+                    <h3 class="feature-title">Fresh Ingredients</h3>
+                    <p class="feature-description">
+                        We source high-quality vegetables, dairy, grains, and meats daily to ensure vibrant flavors in
+                        every dish.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="./assets/images/choose2.webp" alt="Professional Service Team" class="feature-image">
+                    <h3 class="feature-title">Quality You Can Trust</h3>
+                    <p class="feature-description">
+                        Our dishes are crafted from traditional recipes, preserving the taste and soul of true Indian
+                        home cooking.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="./assets/images/choose3.webp" alt="Years of Experience" class="feature-image">
+                    <h3 class="feature-title">Perfect Spice Balance</h3>
+                    <p class="feature-description">
+                        From mild to spicy — every dish is customizable. Our chefs tailor heat levels to your
+                        preference.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="./assets/images/choose4.webp" alt="Years of Experience" class="feature-image">
+                    <h3 class="feature-title">Catering Expertse</h3>
+                    <p class="feature-description">
+                        We specialize in weddings, corporate functions, and private events. Large orders? No problem —
+                        we handle it.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section class="catering-wrapper" id="catering">
+        <div class="catering-container">
+            <div class="catering-header">
+                <h1 data-animate="true">INDIAN CATERING<br>
+                    FOR EVERY OCCASIONS</h1>
+                <div class="subtitle">
+                    <span>EXCEPTIONAL FOOD</span>
+                    <span>ANYWHERE</span>
+                </div>
+                <p class="description">
+                    Whether you're planning a wedding, corporate event, birthday celebration, or family gathering, we
+                    offer delicious, customizable catering packages designed to delight your guests.
+                </p>
+            </div>
+
+            <div class="catering-features">
+                <div class="feature-card">
+                    <img src="./assets/images/catering 1.webp" alt="Buffet Display" class="feature-image">
+                    <h3 class="feature-title">Reliable, Professional Service</h3>
+                    <p class="feature-description">
+                        Enjoy a smooth catering experience from setup to serving. Our team handles every detail so you
+                        can focus on your guests.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="./assets/images/catering 2.webp" alt="Professional Service Team" class="feature-image">
+                    <h3 class="feature-title">Quality You Can Trust</h3>
+                    <p class="feature-description">
+                        Every dish is prepared fresh with consistent flavor and care, bringing restaurant-quality taste
+                        to events of any size.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="./assets/images/catering 3.webp" alt="Years of Experience" class="feature-image">
+                    <h3 class="feature-title">Effortless, Worry-Free Catering</h3>
+                    <p class="feature-description">
+                        From cooking to presentation, we manage everything seamlessly — making your event flavorful,
+                        stress-free, and memorable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order & Delivery Section -->
+
+    <!-- 
+    <section class="order-delivery-section" id="order">
+        <div class="order-divider"></div>
+
+        <div class="pickup-side">
+            <div class="order-card" id="pickup-card">
+                <div class="card-logo">
+                    <img src="./assets/images/logo (2).webp" alt="Tandoor Logo" style="border-radius: 50%;">
+                </div>
+
+                <h2 class="card-title">Order for Pickup</h2>
+
+                <ul class="card-features">
+                    <li>Ready in 15-25 minutes</li>
+                    <li>Order directly through our website</li>
+                </ul>
+
+                <a href="menu.html" class="card-cta">Order Now</a>
+            </div>
+        </div>
+
+        <div class="delivery-side">
+            <div class="order-card" id="delivery-card">
+                <div class="card-logo">
+                    <svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 30 20 L 50 20 C 55 20 60 25 60 30 C 60 35 55 40 50 40 L 30 40 Z" fill="#FF3008" />
+                        <circle cx="80" cy="30" r="10" fill="#FF3008" />
+                        <text x="45" y="55" font-family="Arial, sans-serif" font-size="10" font-weight="bold"
+                            fill="#2B2B2B">DOORDASH</text>
+                    </svg>
+                </div>
+
+                <h2 class="card-title">DoorDash Delivery</h2>
+
+                <ul class="card-features">
+                    <li>Track your delivery in real-time</li>
+                    <li>Full menu available for delivery</li>
+                </ul>
+
+                <a href="https://www.doordash.com/store/tandoor-indian-restaurant-hayward" target="_blank"
+                    class="card-cta">Order on DoorDash</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-wrapper">
+        <div class="testimonial-container">
+            <div class="testimonial-header">
+                <h1 class="testimonial-title" data-animate="true">WHAT OUR<br> GUESTS SAY</h1>
+                <div class="rating-box">
+                    <div class="stars">★★★★★</div>
+                    <div class="rating-score">4.7<sup>*</sup></div>
+                    <div class="rating-label">Excellent</div>
+                    <div class="rating-source">Based on 2,376 reviews</div>
+                </div>
+            </div>
+
+            <div class="testimonial-marquee">
+                <div class="testimonial-track">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">
+                                ★★★★★ </span>
+                            <span class="review-source">Google</span>
+                        </div>
+                        <p class="review-text">
+                            Always so delicious. The staff is incredible and attentive. My favorite restaurant in
+                            Hayward. </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Jamie F.</strong>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">
+                                ★★★★★ </span>
+                            <span class="review-source">Yelp</span>
+                        </div>
+                        <p class="review-text">
+                            The restaurant is very clean, food is amazing and servers very attentive. You will not
+                            regret eating here. </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Priya K.</strong>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">
+                                ★★★★★ </span>
+                            <span class="review-source">Tripadvisor</span>
+                        </div>
+                        <p class="review-text">
+                            I had some of the best Indian food around... Tandoori Chicken, Rogan Josh and samosa
+                            chaat —
+                            everything was incredible. </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Rahul S.</strong>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-stars">
+                                ★★★★★ </span>
+                            <span class="review-source">Google</span>
+                        </div>
+                        <p class="review-text">
+                            GORGEOUS interior and GORGEOUS FOOD! My dining experience was stellar. </p>
+                        <div class="review-author">
+                            <span class="review-author-label">Author</span>
+                            <strong>Anita P.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p class="cta-text">
+                    Have you already visited our restaurant and left<br>
+                    with great memories?
+                </p>
+                <a href="https://g.page/r/tandoorhayward/review" target="_blank" class="cta-link">Be sure to leave us a
+                    review!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Order Button -->
+    <!-- Scroll To Top Button -->
+    <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
+                clip-rule="evenodd" />
+        </svg>
+    </a>
+
+    <!-- Promotional Popup -->
+    <div class="promo-popup-overlay" id="promoPopupOverlay">
+        <div class="promo-popup">
+            <button class="promo-popup-close" id="promoPopupClose">&times;</button>
+            <div class="promo-popup-content">
+                <h2 class="promo-popup-title" id="promoPopupTitle">Special Offer!</h2>
+                <p class="promo-popup-message" id="promoPopupMessage">Get 15% off your first online order!</p>
+                <a href="menu.html" class="promo-popup-cta" id="promoPopupCta">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <!-- Footer Hero - Brand Statement -->
+        <div class="footer-hero">
+            <h2 class="footer-brand">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="footerLogo-img">
+            </h2>
+            <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
+
+            <div class="footer-cta-group">
+                <a href="menu.html" class="footer-cta">Order Online</a>
+                <a href="#reserve" class="footer-cta">Reserve a Table</a>
+                <a href="catering.html" class="footer-cta">Book Catering</a>
+            </div>
+        </div>
+
+        <!-- Footer Content -->
+        <div class="footer-content">
+            <!-- Contact Section -->
+            <div class="footer-section footer-contact">
+                <h3>Visit Us</h3>
+                <p class="address">27167 Mission Blvd, Hayward, CA 94544</p>
+                <div class="phone-card">
+                    <a href="tel:5105550123" class="phone">(510) 555-0123</a>
+                </div>
+                <p>Mon – Wed: 10:30 AM – 9:30 PM</p>
+                <p>Thu – Sun: 11:00 AM – 9:30 PM</p>
+                <p><a href="mailto:info@tandoorhayward.com">info@tandoorhayward.com</a></p>
+
+                <!-- Social Media Icons -->
+                <div class="footer-social-links">
+                    <a href="https://instagram.com/tandoorhayward" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/tandoorhayward" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section footer-links">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get the latest specials and events delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>&copy; 2025 Tandoor Indian Restaurant</p>
+                <span class="separator">•</span>
+                <p>Crafted with love by <a href="https://hiraya.digital" target="_blank">Hiraya Digital</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Container -->
+    <div class="mobile-menu-container">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="menu.html" class="mobile-cta-button">Order Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Init script for header/scroll
+        });
+    </script>
+</body>
+
+</html>

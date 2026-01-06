@@ -1,0 +1,153 @@
+/* Legal Pages (Terms & Privacy) */
+.legal-page {
+    background: var(--cream);
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.legal-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.legal-header .last-updated {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.legal-content {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.legal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #F5A623;
+    display: inline-block;
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.legal-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-content strong {
+    color: #1a1a1a;
+}
+
+.legal-content a {
+    color: #F5A623;
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #F5A623;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: gap 0.3s ease;
+}
+
+.back-link:hover {
+    gap: 0.75rem;
+}
+
+.highlight-box {
+    background: #FFF8E7;
+    border-left: 4px solid #F5A623;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.highlight-box strong {
+    color: #1a1a1a;
+}
+
+.legal-header p {
+    color: #666;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.legal-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.legal-footer a {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.legal-footer a:hover {
+    background: #F5A623;
+}
+
+/* Mini Footer for Legal Pages */
+.legal-page .footer {
+    background: #1a1a1a;
+}
+
+.legal-page .footer-hero,
+.legal-page .footer-content {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .legal-header h1 {
+        font-size: 2rem;
+    }
+
+    .legal-content {
+        padding: 2rem 1.5rem;
+    }
+}

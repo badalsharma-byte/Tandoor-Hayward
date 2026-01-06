@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="Experience the best Indian food in Hayward, CA. Tandoor Indian Restaurant offers authentic curries, tandoori dishes, and catering services. Order online now!">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tandoor Indian Restaurant | Authentic Indian Cuisine in Hayward</title>
+    <title>Tandoor Indian Restaurant | Authentic Cuisine in Hayward</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.png">
-    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.png">
+    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
+    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +22,49 @@
     <link rel="stylesheet" href="css/main.css">
 
     <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <!-- External Libraries -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Tandoor Indian Restaurant",
+      "image": "https://tandoorhayward.com/assets/tandoor-india-logo.webp",
+      "@id": "",
+      "url": "https://tandoorhayward.com",
+      "telephone": "(510) 555-0123",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "27167 Mission Blvd",
+        "addressLocality": "Hayward",
+        "addressRegion": "CA",
+        "postalCode": "94544",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6400,
+        "longitude": -122.0600
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
 </head>
 
@@ -43,7 +82,7 @@
 
             <!-- Center Logo -->
             <a href="index.html" class="logo">
-                <img src="./assets/images/logo (2).png" alt="Tandoor Indian Restaurant" class="logo-img">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
             </a>
 
             <!-- Right Navigation -->
@@ -157,7 +196,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Chicken Biryani</span>
-                            <span class="menu-item-price">$19.99</span>
+                            <span class="menu-item-price">$14.99</span>
                         </div>
                         <p class="menu-item-description">
                             Basmati rice cooked with tender chicken and aromatic spices.
@@ -166,7 +205,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Jeera Rice</span>
-                            <span class="menu-item-price">$5.99</span>
+                            <span class="menu-item-price">$4.49</span>
                         </div>
                         <p class="menu-item-description">
                             Basmati rice flavored with cumin seeds.
@@ -175,7 +214,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Lamb Biryani</span>
-                            <span class="menu-item-price">$21.99</span>
+                            <span class="menu-item-price">$15.99</span>
                         </div>
                         <p class="menu-item-description">
                             Basmati rice cooked with tender lamb and aromatic spices.
@@ -184,7 +223,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Plain Basmati Rice</span>
-                            <span class="menu-item-price">$4.99</span>
+                            <span class="menu-item-price">$4.49</span>
                         </div>
                         <p class="menu-item-description">
                             Steamed basmati rice.
@@ -193,7 +232,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Shrimp Biryani</span>
-                            <span class="menu-item-price">$21.99</span>
+                            <span class="menu-item-price">$15.99</span>
                         </div>
                         <p class="menu-item-description">
                             Basmati rice cooked with shrimp and aromatic spices.
@@ -202,7 +241,7 @@
                     <li class="menu-item">
                         <div class="menu-item-header">
                             <span class="menu-item-name">Vegetable Biryani</span>
-                            <span class="menu-item-price">$17.99</span>
+                            <span class="menu-item-price">$11.99</span>
                         </div>
                         <p class="menu-item-description">
                             Basmati rice cooked with mixed vegetables and aromatic spices.
@@ -217,14 +256,14 @@
             <!-- Right Side - Images -->
             <div class="menu-images-right">
                 <div class="menu-image-container" data-image="1">
-                    <img src="./uploads/menu/menu_6931aa7336fc26.77445685.jpg" alt="Menu Image 1" class="menu-image">
+                    <img src="./uploads/menu/menu_6931aa7336fc26.77445685.webp" alt="Menu Image 1" class="menu-image">
                 </div>
                 <div class="menu-image-container" data-image="2">
-                    <img src="./uploads/menu_section/menu_section_6931d74adf9800.15236000.jpg" alt="Menu Image 2"
+                    <img src="./uploads/menu_section/menu_section_6931d74adf9800.15236000.webp" alt="Menu Image 2"
                         class="menu-image">
                 </div>
                 <div class="menu-image-container" data-image="3">
-                    <img src="./uploads/menu_section/menu_section_6931d754295a62.68106705.jpg" alt="Menu Image 3"
+                    <img src="./uploads/menu_section/menu_section_6931d754295a62.68106705.webp" alt="Menu Image 3"
                         class="menu-image">
                 </div>
             </div>
@@ -248,7 +287,7 @@
 
             <div class="ChooseUs-features">
                 <div class="feature-card">
-                    <img src="./assets/images/choose1.png" alt="Buffet Display" class="feature-image">
+                    <img src="./assets/images/choose1.webp" alt="Buffet Display" class="feature-image">
                     <h3 class="feature-title">Fresh Ingredients</h3>
                     <p class="feature-description">
                         We source high-quality vegetables, dairy, grains, and meats daily to ensure vibrant flavors in
@@ -257,7 +296,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <img src="./assets/images/choose2.png" alt="Professional Service Team" class="feature-image">
+                    <img src="./assets/images/choose2.webp" alt="Professional Service Team" class="feature-image">
                     <h3 class="feature-title">Quality You Can Trust</h3>
                     <p class="feature-description">
                         Our dishes are crafted from traditional recipes, preserving the taste and soul of true Indian
@@ -266,7 +305,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <img src="./assets/images/choose3.png" alt="Years of Experience" class="feature-image">
+                    <img src="./assets/images/choose3.webp" alt="Years of Experience" class="feature-image">
                     <h3 class="feature-title">Perfect Spice Balance</h3>
                     <p class="feature-description">
                         From mild to spicy — every dish is customizable. Our chefs tailor heat levels to your
@@ -275,7 +314,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <img src="./assets/images/choose4.png" alt="Years of Experience" class="feature-image">
+                    <img src="./assets/images/choose4.webp" alt="Years of Experience" class="feature-image">
                     <h3 class="feature-title">Catering Expertse</h3>
                     <p class="feature-description">
                         We specialize in weddings, corporate functions, and private events. Large orders? No problem —
@@ -305,7 +344,7 @@
 
             <div class="catering-features">
                 <div class="feature-card">
-                    <img src="./assets/images/catering 1.png" alt="Buffet Display" class="feature-image">
+                    <img src="./assets/images/catering 1.webp" alt="Buffet Display" class="feature-image">
                     <h3 class="feature-title">Reliable, Professional Service</h3>
                     <p class="feature-description">
                         Enjoy a smooth catering experience from setup to serving. Our team handles every detail so you
@@ -314,7 +353,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <img src="./assets/images/catering 2.png" alt="Professional Service Team" class="feature-image">
+                    <img src="./assets/images/catering 2.webp" alt="Professional Service Team" class="feature-image">
                     <h3 class="feature-title">Quality You Can Trust</h3>
                     <p class="feature-description">
                         Every dish is prepared fresh with consistent flavor and care, bringing restaurant-quality taste
@@ -323,7 +362,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <img src="./assets/images/catering 3.png" alt="Years of Experience" class="feature-image">
+                    <img src="./assets/images/catering 3.webp" alt="Years of Experience" class="feature-image">
                     <h3 class="feature-title">Effortless, Worry-Free Catering</h3>
                     <p class="feature-description">
                         From cooking to presentation, we manage everything seamlessly — making your event flavorful,
@@ -342,7 +381,7 @@
         <div class="pickup-side">
             <div class="order-card" id="pickup-card">
                 <div class="card-logo">
-                    <img src="./assets/images/logo (2).png" alt="Tandoor Logo" style="border-radius: 50%;">
+                    <img src="./assets/images/logo (2).webp" alt="Tandoor Logo" style="border-radius: 50%;">
                 </div>
 
                 <h2 class="card-title">Order for Pickup</h2>
@@ -467,7 +506,7 @@
 
     <!-- Floating Order Button -->
     <!-- Scroll To Top Button -->
-    <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <a href="#" class="js-order-trigger scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path fill-rule="evenodd"
                 d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
@@ -492,13 +531,12 @@
         <!-- Footer Hero - Brand Statement -->
         <div class="footer-hero">
             <h2 class="footer-brand">
-                <img src="./assets/images/logo (2).png" alt="Tandoor Indian Restaurant" class="footerLogo-img">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="footerLogo-img">
             </h2>
             <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
 
             <div class="footer-cta-group">
-                <a href="menu.html" class="footer-cta">Order Online</a>
-                <a href="#reserve" class="footer-cta">Reserve a Table</a>
+                <a href="#order" class="footer-cta js-order-trigger">Order Online</a>
                 <a href="catering.html" class="footer-cta">Book Catering</a>
             </div>
         </div>
@@ -512,8 +550,8 @@
                 <div class="phone-card">
                     <a href="tel:5105550123" class="phone">(510) 555-0123</a>
                 </div>
-                <p>Mon – Wed: 10:30 AM – 9:30 PM</p>
-                <p>Thu – Sun: 11:00 AM – 9:30 PM</p>
+                <p>Sun – Thu: 10:30 AM – 9:30 PM</p>
+                <p>Fri – Sat: 10:30 AM – 10:00 PM</p>
                 <p><a href="mailto:info@tandoorhayward.com">info@tandoorhayward.com</a></p>
 
                 <!-- Social Media Icons -->
@@ -577,7 +615,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="catering.html">Catering</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="menu.html" class="mobile-cta-button">Order Now</a></li>
+            <li><a href="#order" class="mobile-cta-button js-order-trigger">Order Now</a></li>
         </ul>
     </div>
 
@@ -588,6 +626,7 @@
             // Init script for header/scroll
         });
     </script>
+<script src="js/ordering.js"></script>
 </body>
 
 </html>

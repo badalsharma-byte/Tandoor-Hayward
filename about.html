@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="Since 1998, Tandoor Indian Restaurant has served authentic flavors crafted with passion and tradition in Hayward, California.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Tandoor Indian Restaurant</title>
+    <title>About Us | Tandoor Indian Restaurant Story</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.png">
-    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.png">
+    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
+    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +22,49 @@
     <link rel="stylesheet" href="css/main.css">
 
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <!-- External Libraries -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Tandoor Indian Restaurant",
+      "image": "https://tandoorhayward.com/assets/tandoor-india-logo.webp",
+      "@id": "",
+      "url": "https://tandoorhayward.com",
+      "telephone": "(510) 555-0123",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "27167 Mission Blvd",
+        "addressLocality": "Hayward",
+        "addressRegion": "CA",
+        "postalCode": "94544",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6400,
+        "longitude": -122.0600
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
 </head>
 
@@ -43,7 +82,7 @@
 
             <!-- Center Logo -->
             <a href="index.html" class="logo">
-                <img src="./assets/images/logo (2).png" alt="Tandoor Indian Restaurant" class="logo-img">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
             </a>
 
             <!-- Right Navigation -->
@@ -104,7 +143,7 @@
                 </div>
 
                 <div class="journey-image-wrapper">
-                    <img src="./assets/images/about/2.jpeg" alt="Tandoor Restaurant Kitchen" class="journey-img">
+                    <img src="./assets/images/about/2.webp" alt="Tandoor Restaurant Kitchen" class="journey-img">
                 </div>
             </div>
         </div>
@@ -137,7 +176,7 @@
                 </div>
             </div>
             <div class="quote-image-container">
-                <img src="./assets/images/about/3.jpeg" alt="Fresh Ingredients" class="quote-image">
+                <img src="./assets/images/about/3.webp" alt="Fresh Ingredients" class="quote-image">
             </div>
         </div>
     </section>
@@ -300,13 +339,12 @@
         <!-- Footer Hero - Brand Statement -->
         <div class="footer-hero">
             <h2 class="footer-brand">
-                <img src="./assets/images/logo (2).png" alt="Tandoor Indian Restaurant" class="footerLogo-img">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="footerLogo-img">
             </h2>
             <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
 
             <div class="footer-cta-group">
-                <a href="menu.html" class="footer-cta">Order Online</a>
-                <a href="#reserve" class="footer-cta">Reserve a Table</a>
+                <a href="#order" class="footer-cta js-order-trigger">Order Online</a>
                 <a href="catering.html" class="footer-cta">Book Catering</a>
             </div>
         </div>
@@ -320,8 +358,8 @@
                 <div class="phone-card">
                     <a href="tel:5105550123" class="phone">(510) 555-0123</a>
                 </div>
-                <p>Mon – Wed: 10:30 AM – 9:30 PM</p>
-                <p>Thu – Sun: 11:00 AM – 9:30 PM</p>
+                <p>Sun – Thu: 10:30 AM – 9:30 PM</p>
+                <p>Fri – Sat: 10:30 AM – 10:00 PM</p>
                 <p><a href="mailto:info@tandoorhayward.com">info@tandoorhayward.com</a></p>
 
                 <!-- Social Media Icons -->
@@ -385,12 +423,12 @@
             <li><a href="about.html">About</a></li>
             <li><a href="catering.html">Catering</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="menu.html" class="mobile-cta-button">Order Now</a></li>
+            <li><a href="#order" class="mobile-cta-button js-order-trigger">Order Now</a></li>
         </ul>
     </div>
 
     <!-- Scroll To Top Button -->
-    <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <a href="#" class="js-order-trigger scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path fill-rule="evenodd"
                 d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
@@ -401,6 +439,7 @@
     <!-- Main Script -->
     <script src="js/main.js"></script>
     <script src="js/about.js"></script>
+<script src="js/ordering.js"></script>
 </body>
 
 </html>

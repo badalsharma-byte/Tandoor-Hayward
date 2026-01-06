@@ -1,0 +1,810 @@
+/* ============================================
+   ABOUT PAGE STYLES
+   Improved design with proper spacing, contrast, and animations
+============================================ */
+
+:root {
+    --about-beige: #E8DFD0;
+    --about-beige-light: #F5F0E8;
+    --about-dark: #1A1A1A;
+    --about-dark-olive: #4A4538;
+    --about-text-dark: #2B2B2B;
+    --about-text-muted: #5A5A5A;
+    --about-cream: #FFF8E7;
+    --about-accent: #F5A623;
+}
+
+.nav-left a {
+    color: var(--about-text-dark);
+}
+
+.nav-right a {
+    color: var(--about-text-dark);
+}
+
+/* ============================================
+   HERO SECTION
+============================================ */
+.about-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--about-beige);
+    padding: 140px 20px 80px;
+    overflow: hidden;
+}
+
+.about-hero-content {
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-title-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.about-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 12vw, 8rem);
+    line-height: 0.85;
+    font-weight: 400;
+    color: var(--about-text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.about-hero-title .line-1,
+.about-hero-title .line-2 {
+    display: block;
+}
+
+.side-text {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--about-text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.about-hero-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--about-text-muted);
+    max-width: 600px;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ============================================
+   SPACER SECTION
+============================================ */
+.about-spacer {
+    width: 100%;
+    height: 0;
+    display: none;
+}
+
+/* ============================================
+   JOURNEY SECTION
+============================================ */
+.about-journey {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    padding: 100px 5%;
+    background-color: var(--about-beige);
+    color: var(--about-text-dark);
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.journey-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.journey-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--about-text-dark);
+    font-weight: 400;
+    text-align: left;
+}
+
+.journey-bottom-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.journey-text {
+    max-width: 550px;
+}
+
+.journey-text p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-weight: 400;
+    color: var(--about-text-muted);
+}
+
+.journey-text p:last-child {
+    margin-bottom: 0;
+}
+
+.journey-image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+    margin-left: auto;
+}
+
+.journey-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.journey-image-wrapper:hover .journey-img {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   TRADITION SECTION (Dark)
+============================================ */
+.about-tradition {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--about-dark-olive);
+    color: var(--about-cream);
+    text-align: center;
+    padding: 100px 20px;
+    z-index: 20;
+}
+
+.tradition-content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.tradition-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--about-accent);
+    margin-bottom: 10px;
+}
+
+.tradition-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--about-cream);
+}
+
+.tradition-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-top: 30px;
+    color: rgba(255, 248, 231, 0.8);
+    font-weight: 300;
+}
+
+/* ============================================
+   QUOTE SECTION
+============================================ */
+.about-quote-section {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.quote-content-wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+}
+
+.quote-text-container {
+    flex: 1;
+    background-color: var(--about-beige-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 60px;
+    text-align: center;
+    color: var(--about-text-dark);
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    margin-bottom: 40px;
+    border: none;
+    padding: 0;
+    max-width: 500px;
+    color: var(--about-text-dark);
+}
+
+.quote-author {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.quote-author strong {
+    font-weight: 600;
+    color: var(--about-text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.quote-author span {
+    font-weight: 300;
+    color: var(--about-text-muted);
+}
+
+.quote-image-container {
+    flex: 1;
+    position: relative;
+}
+
+.quote-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+   PHILOSOPHY SECTION with HORIZONTAL STACKING CARDS
+============================================ */
+.about-philosophy {
+    width: 100%;
+    background-color: var(--about-beige);
+    position: relative;
+    padding: 0;
+}
+
+.philosophy-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px;
+}
+
+.philosophy-background-title {
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.philosophy-roman {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 20px;
+    color: var(--about-accent);
+}
+
+.philosophy-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: var(--about-text-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Horizontal Cards Grid */
+.philosophy-cards-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.philosophy-card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.card-number {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: block;
+    color: var(--about-accent);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--about-text-dark);
+    font-weight: 500;
+}
+
+.card-text {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--about-text-muted);
+}
+
+/* ============================================
+   PEOPLE SECTION
+============================================ */
+.about-people {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../assets/images/about/4.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 100px 5%;
+    color: var(--about-cream);
+}
+
+.about-people::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.people-content-container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.people-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    margin: 0;
+    color: var(--about-cream);
+}
+
+.people-text-wrapper {
+    margin-top: auto;
+    padding-bottom: 50px;
+}
+
+.people-text {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    max-width: 450px;
+    line-height: 1.8;
+    color: rgba(255, 248, 231, 0.9);
+}
+
+/* ============================================
+   TESTIMONIAL SECTION
+============================================ */
+.about-testimonial {
+    background: var(--about-beige-light);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.about-testimonial .testimonial-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.about-testimonial .testimonial-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-testimonial .testimonial-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--about-text-dark);
+}
+
+.about-testimonial .rating-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-testimonial .rating-box .stars {
+    color: var(--about-accent);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}
+
+.about-testimonial .rating-score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--about-text-dark);
+    line-height: 1;
+}
+
+.about-testimonial .rating-score sup {
+    font-size: 1.2rem;
+    color: var(--about-text-muted);
+    font-weight: 500;
+}
+
+.about-testimonial .rating-label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--about-text-dark);
+}
+
+.about-testimonial .rating-source {
+    font-size: 0.85rem;
+    color: var(--about-text-muted);
+}
+
+/* Marquee */
+.testimonial-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.testimonial-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-marquee:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+.about-testimonial .review-card {
+    width: 380px;
+    flex-shrink: 0;
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-testimonial .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-testimonial .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.about-testimonial .review-stars {
+    color: var(--about-accent);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.about-testimonial .review-source {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--about-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-testimonial .review-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--about-text-muted);
+    font-style: italic;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.about-testimonial .review-author {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 16px;
+}
+
+.about-testimonial .review-author-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--about-text-muted);
+    margin-bottom: 4px;
+}
+
+.about-testimonial .review-author strong {
+    font-size: 1rem;
+    color: var(--about-text-dark);
+}
+
+.about-testimonial .cta-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.about-testimonial .cta-text {
+    font-size: 1.1rem;
+    color: var(--about-text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.about-testimonial .cta-link {
+    color: var(--about-accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--about-accent);
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.about-testimonial .cta-link:hover {
+    color: #d48806;
+    border-color: #d48806;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+@media (max-width: 1200px) {
+    .philosophy-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 968px) {
+    .about-hero {
+        padding: 120px 20px 60px;
+    }
+
+    .hero-title-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .side-text {
+        display: block;
+        order: -1;
+    }
+
+    .side-text.right {
+        order: 1;
+    }
+
+    .journey-bottom-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .journey-text {
+        max-width: 100%;
+    }
+
+    .journey-image-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .quote-content-wrapper {
+        flex-direction: column;
+    }
+
+    .quote-text-container {
+        padding: 60px 30px;
+        min-height: 50vh;
+    }
+
+    .quote-image-container {
+        min-height: 50vh;
+    }
+
+    .philosophy-cards-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .about-people {
+        min-height: auto;
+        padding: 80px 20px;
+        background-attachment: scroll;
+    }
+
+    .about-testimonial .review-card {
+        width: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-image-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .tradition-title,
+    .philosophy-title,
+    .journey-title,
+    .people-title,
+    .about-testimonial .testimonial-title {
+        font-size: 2rem;
+    }
+
+    .philosophy-card {
+        padding: 30px 24px;
+    }
+
+    .about-testimonial .review-card {
+        width: 280px;
+        padding: 24px;
+        min-height: 240px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+.philosophy-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.philosophy-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.philosophy-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.philosophy-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.philosophy-card:nth-child(4) {
+    transition-delay: 0.45s;
+}

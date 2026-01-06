@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dine In Menu | Tandoor Indian Restaurant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
+    <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/menu-dinein.css">
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body class="dinein-page">
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Left Navigation -->
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <!-- Center Logo -->
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
+            </a>
+
+            <!-- Right Navigation -->
+            <ul class="nav-right">
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+
+    <!-- Menu Hero Section -->
+    <section class="dinein-hero">
+        <div class="hero-content">
+            <span class="hero-label">Dine In</span>
+            <h1 class="hero-title" data-animate="true">OUR MENU</h1>
+            <p class="hero-subtitle">Authentic flavors of India, crafted with love</p>
+        </div>
+    </section>
+
+    <!-- Restaurant Info Bar -->
+    <div class="restaurant-info-bar">
+        <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" width="20" height="20">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>27167 Mission Blvd, Hayward, CA 94544</span>
+        </div>
+        <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" width="20" height="20">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>(510) 555-0123</span>
+        </div>
+        <!-- <a href="menu.html" class="order-cta-btn">Order Online</a> -->
+    </div>
+
+    <!-- Menu Content -->
+    <main class="dinein-menu-main">
+        <!-- Category Navigation -->
+        <nav class="category-nav" id="category-nav">
+            <ul id="category-list">
+                <li><a href="#cat-0" class="active">Biryani</a></li>
+                <li><a href="#cat-1" class="">Breads</a></li>
+                <li><a href="#cat-2" class="">Chicken</a></li>
+                <li><a href="#cat-3" class="">Desserts</a></li>
+                <li><a href="#cat-4" class="">Drinks</a></li>
+                <li><a href="#cat-5" class="">Lamb</a></li>
+                <li><a href="#cat-6" class="">Seafood</a></li>
+                <li><a href="#cat-7" class="">Starters</a></li>
+                <li><a href="#cat-8" class="">Tandoori</a></li>
+                <li><a href="#cat-9" class="">Vegetable</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu Grid -->
+        <div class="menu-content" id="menu-content">
+
+            <section id="cat-0" class="menu-category-section">
+                <h2 class="category-title">Biryani</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d63a8bb597.36745692.webp" alt="Chicken Biryani"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Biryani</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Basmati rice cooked with tender chicken and aromatic spices.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d1a5a5e7a5.41169620.webp" alt="Jeera Rice"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Jeera Rice</h3>
+                                <span class="dietary-badge">Veg, GF, Vegan</span>
+                            </div>
+                            <p class="item-desc">Basmati rice flavored with cumin seeds.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d1dedae183.33465992.webp" alt="Lamb Biryani"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Biryani</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Basmati rice cooked with tender lamb and aromatic spices.</p>
+                            <div class="item-price">$21.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d1f6977cf7.43021689.webp" alt="Plain Basmati Rice"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Plain Basmati Rice</h3>
+                                <span class="dietary-badge">Veg, GF, Vegan</span>
+                            </div>
+                            <p class="item-desc">Steamed basmati rice.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d208e75ed4.03561372.webp" alt="Shrimp Biryani"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Shrimp Biryani</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Basmati rice cooked with shrimp and aromatic spices.</p>
+                            <div class="item-price">$21.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d21fa992d6.40304984.webp" alt="Vegetable Biryani"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Vegetable Biryani</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Basmati rice cooked with mixed vegetables and aromatic spices.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-1" class="menu-category-section">
+                <h2 class="category-title">Breads</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2330f9173.78007777.webp" alt="Aloo Paratha"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Aloo Paratha</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Paratha stuffed with spiced potatoes.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2433a08d7.94237836.webp" alt="Butter Naan"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Butter Naan</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Naan brushed with butter.</p>
+                            <div class="item-price">$4.49</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d6d57018d5.46466936.webp" alt="Cheese Naan"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Cheese Naan</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Naan stuffed with cheese.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d25658ef98.00955213.webp" alt="Garlic Naan"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Garlic Naan</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Naan topped with fresh garlic and cilantro.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2676c0485.87642765.webp" alt="Keema Naan"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Keema Naan</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Naan stuffed with spiced minced meat.</p>
+                            <div class="item-price">$6.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2781c54b5.47223089.webp" alt="Naan"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Naan</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Leavened white flour bread baked in tandoor.</p>
+                            <div class="item-price">$3.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d28802aff3.60032297.webp" alt="Paratha"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Paratha</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Layered whole wheat bread.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d29771ffc7.02359770.webp" alt="Puri"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Puri</h3>
+                                <span class="dietary-badge">Veg, Vegan</span>
+                            </div>
+                            <p class="item-desc">Deep-fried puffed bread (2 pieces).</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2a66130a6.37067457.webp" alt="Tandoori Roti"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Tandoori Roti</h3>
+                                <span class="dietary-badge">Veg, Vegan</span>
+                            </div>
+                            <p class="item-desc">Whole wheat bread baked in tandoor.</p>
+                            <div class="item-price">$3.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-2" class="menu-category-section">
+                <h2 class="category-title">Chicken</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2b6ba8441.03948217.webp" alt="Butter Chicken"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Butter Chicken</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Boneless chicken cooked in a buttery tomato gravy.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d6ec237fc6.21813807.webp" alt="Chicken Curry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Curry</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional chicken curry with aromatic spices.</p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2c5d50f85.80224614.webp" alt="Chicken Korma"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Korma</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Chicken cooked in a mild, creamy cashew and almond sauce.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2d63afe07.49766768.webp" alt="Chicken Saag"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Saag</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Chicken cooked with spinach and spices.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d2f08211a7.95104874.webp" alt="Chicken Tikka Masala"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Tikka Masala</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Tandoori chicken cubes simmered in a rich, creamy tomato sauce.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d302ef3d58.40821099.webp" alt="Chicken Vindaloo"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Vindaloo</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Chicken cooked with potatoes in a spicy, tangy sauce.</p>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-3" class="menu-category-section">
+                <h2 class="category-title">Desserts</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d310b77a03.70950152.webp" alt="Gulab Jamun"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Gulab Jamun</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Fried milk dumplings soaked in rose-flavored syrup.</p>
+                            <div class="item-price">$6.29</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d322c96c37.46070726.webp" alt="Kheer"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Kheer</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional rice pudding with cardamom and nuts.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d332b6e187.03342541.webp" alt="Mango Kulfi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Mango Kulfi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional Indian ice cream with mango flavor.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d34acdcea0.74736981.webp" alt="Pistachio Kulfi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Pistachio Kulfi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional Indian ice cream with pistachio flavor.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d366329a99.72459649.webp" alt="Rasmalai"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Rasmalai</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Soft cheese patties in sweetened, thickened milk.</p>
+                            <div class="item-price">$6.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-4" class="menu-category-section">
+                <h2 class="category-title">Drinks</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d374e21726.84836916.webp" alt="Mango Juice"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Mango Juice</h3>
+                                <span class="dietary-badge">Veg, GF, Vegan</span>
+                            </div>
+                            <p class="item-desc">Fresh mango juice.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3828850e4.39813335.webp" alt="Mango Lassi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Mango Lassi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Refreshing yogurt drink with mango pulp.</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d39edeee00.91078238.webp" alt="Masala Chai"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Masala Chai</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional spiced Indian tea.</p>
+                            <div class="item-price">$3.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3af0bc041.68700539.webp" alt="Salted Lassi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Salted Lassi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Traditional salted yogurt drink.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3be37f2c6.00636368.webp" alt="Sweet Lassi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Sweet Lassi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Sweet yogurt drink.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-5" class="menu-category-section">
+                <h2 class="category-title">Lamb</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3ce6645b4.83923677.webp" alt="Lamb Curry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Curry</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Tender lamb chunks cooked in a traditional curry sauce.</p>
+                            <div class="item-price">$20.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3dc67d514.07080848.webp" alt="Lamb Korma"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Korma</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Lamb cooked in a mild, creamy cashew and almond sauce.</p>
+                            <div class="item-price">$20.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3ea243ed8.54663740.webp" alt="Lamb Rogan Josh"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Rogan Josh</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Kashmiri-style lamb curry with aromatic spices.</p>
+                            <div class="item-price">$21.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d3f6d4b831.20820784.webp" alt="Lamb Saag"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Saag</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Lamb cooked with spinach and spices.</p>
+                            <div class="item-price">$20.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d404b30374.06328688.webp" alt="Lamb Vindaloo"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Lamb Vindaloo</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Lamb cooked with potatoes in a spicy, tangy sauce.</p>
+                            <div class="item-price">$20.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-6" class="menu-category-section">
+                <h2 class="category-title">Seafood</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d413c50613.93956334.webp" alt="Fish Curry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Fish Curry</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Fresh fish cooked in a flavorful curry sauce.</p>
+                            <div class="item-price">$20.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d421b37eb4.35153820.webp" alt="Shrimp Curry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Shrimp Curry</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Shrimp cooked in a spiced tomato-based curry.</p>
+                            <div class="item-price">$21.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d42fc4afe4.54339577.webp" alt="Shrimp Masala"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Shrimp Masala</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Shrimp simmered in a rich, creamy tomato sauce.</p>
+                            <div class="item-price">$21.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-7" class="menu-category-section">
+                <h2 class="category-title">Starters</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d43cc924a3.31650496.webp" alt="Chili Chicken"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chili Chicken</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Boneless chicken tossed with bell peppers and onions in a spicy sauce.
+                            </p>
+                            <div class="item-price">$16.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d44aed01d6.80242458.webp" alt="Chili Paneer"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chili Paneer</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Cubes of cottage cheese tossed with bell peppers and onions in a spicy
+                                sauce.</p>
+                            <div class="item-price">$16.49</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d457e9bbe6.24721853.webp" alt="Gobhi Manchurian"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Gobhi Manchurian</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Cauliflower florets tossed in a spicy, tangy Indo-Chinese sauce.</p>
+                            <div class="item-price">$15.79</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d466121e36.87105547.webp" alt="Meat Samosa"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Meat Samosa</h3>
+                                <span class="dietary-badge">Non-Veg</span>
+                            </div>
+                            <p class="item-desc">Crisp patties stuffed with spiced minced meat.</p>
+                            <div class="item-price">$8.49</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4730b6d70.85539327.webp" alt="Papadam"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Papadam</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Thin, crisp lentil wafers.</p>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d47f7ba275.93563692.webp" alt="Samosa Chaat"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Samosa Chaat</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Samosas topped with chickpeas, yogurt, mint, and tamarind chutney.</p>
+                            <div class="item-price">$14.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d48d28fcf2.24835853.webp" alt="Vegetable Samosa"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Vegetable Samosa</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Crisp patties stuffed with spiced potatoes and green peas.</p>
+                            <div class="item-price">$7.79</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-8" class="menu-category-section">
+                <h2 class="category-title">Tandoori</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4a3cbf8a9.36616801.webp" alt="Chicken Tikka"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Chicken Tikka</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Boneless chicken marinated in yogurt and spices, grilled in tandoor.
+                            </p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4b3a45d15.93683840.webp" alt="Mixed Grill"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Mixed Grill</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Assortment of tandoori chicken, chicken tikka, and seekh kebab.</p>
+                            <div class="item-price">$24.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4c49b49e6.04755385.webp" alt="Paneer Tikka"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Paneer Tikka</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Cottage cheese cubes marinated and grilled in tandoor.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4d2ac2088.84666308.webp" alt="Seekh Kebab"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Seekh Kebab</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Minced lamb skewers grilled in tandoor.</p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931c3c5c51035.21071612.webp" alt="Tandoori Chicken"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Tandoori Chicken</h3>
+                                <span class="dietary-badge">Non-Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Half chicken marinated in yogurt and spices, grilled in tandoor.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cat-9" class="menu-category-section">
+                <h2 class="category-title">Vegetable</h2>
+                <div class="menu-grid">
+
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4e6451e73.54702540.webp" alt="Aloo Gobhi"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Aloo Gobhi</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Potatoes and cauliflower cooked with spices.</p>
+                            <div class="item-price">$18.29</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d4f429b5b7.05942345.webp" alt="Baingan Bharta"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Baingan Bharta</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Roasted eggplant mashed and cooked with onions, tomatoes and spices.
+                            </p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d50228ff41.98411123.webp" alt="Channa Masala"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Channa Masala</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Chickpeas cooked in a flavorful onion and tomato gravy.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d510840782.15512075.webp" alt="Dal Fry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Dal Fry</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Yellow lentils cooked with onions, tomatoes, and spices.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d51def30a5.83510728.webp" alt="Malai Kofta"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Malai Kofta</h3>
+                                <span class="dietary-badge">Veg</span>
+                            </div>
+                            <p class="item-desc">Deep-fried vegetable dumplings in a creamy tomato sauce.</p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d533772262.72449147.webp" alt="Mixed Vegetable Curry"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Mixed Vegetable Curry</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Seasonal vegetables cooked in a flavorful curry sauce.</p>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d5448c1644.85949942.webp" alt="Palak Paneer"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Palak Paneer</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Cottage cheese cubes in a creamy spinach gravy.</p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="uploads/menu/menu_6931d5554cbe65.08932254.webp" alt="Paneer Tikka Masala"
+                                onerror="this.src='./assets/images/menu-placeholder.webp'">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3 class="item-name">Paneer Tikka Masala</h3>
+                                <span class="dietary-badge">Veg, GF</span>
+                            </div>
+                            <p class="item-desc">Paneer cubes simmered in a rich, creamy tomato sauce.</p>
+                            <div class="item-price">$18.99</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>&copy; 2025 Tandoor Indian Restaurant</p>
+                <span class="separator">•</span>
+                <p>Crafted with love by <a href="https://hiraya.digital" target="_blank">Hiraya Digital</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Container -->
+    <div class="mobile-menu-container">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="menu.html" class="mobile-cta-button">Order Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
+                clip-rule="evenodd" />
+        </svg>
+    </a>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setupScrollSpy();
+        });
+
+        function setupScrollSpy() {
+            const categoryList = document.getElementById('category-list');
+            const links = categoryList.querySelectorAll('a');
+
+            // Click handler
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Update active state
+                        links.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Optional: Add scroll listener to update active state while scrolling
+            window.addEventListener('scroll', () => {
+                let current = '';
+                document.querySelectorAll('.menu-category-section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === current) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
